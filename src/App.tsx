@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Button from './components/atoms/Button'
+import { ThemeProvider } from 'styled-components'
+import theme from './theme'
 
-function App() {
+const App:React.FC = () =>  {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+      <Button btnText='버튼'/>
+      <br/><br/>
+      <Button btnText='버튼' fc={theme.colors.white} bg={theme.colors.green} size="large"/>
+      <br/><br/>
+      <Button btnText='버튼' fc={theme.colors.white} bg={theme.colors.green} size="medium"/>
+      <br/><br/>
+      <Button btnText='버튼' fc={theme.colors.white} bg={theme.colors.green} size="small"/>
+      <br/><br/>
+      <Button btnText='버튼' fc={theme.colors.white} bg={theme.colors.red} size="large"/>
+      <br/><br/>
+      <Button btnText='버튼' fc={theme.colors.white} bg={theme.colors.red} size="medium"/>
+      <br/><br/>
+      <Button btnText='버튼' fc={theme.colors.white} bg={theme.colors.red}/>
+      <br/><br/>
+      <Button btnText='버튼' border={theme.colors.green}/>
+      <br/><br/>
+      <Button btnText='버튼' border={theme.colors.red}/>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
